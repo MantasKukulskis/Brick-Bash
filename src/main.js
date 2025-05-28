@@ -1,23 +1,36 @@
-import { initGame, setGameState, gameLoop } from './game.js';
+import { initGame, setGameState } from './game.js';
 
-const restartBtn = document.getElementById('restart-btn');
+const gameContainer = document.getElementById('game-container');
 const messageContainer = document.getElementById('message-container');
 const gameMessage = document.getElementById('game-message');
-const container = document.getElementById('game-container');
+const restartBtn = document.getElementById('restart-btn');
+const levelSelect = document.getElementById('levelSelect');
+const startGameBtn = document.getElementById('startGameBtn');
 
-let isStarted = false;
+function showMessage(msg) {
+  gameMessage.textContent = msg;
+  messageContainer.style.display = 'block';
+  gameContainer.style.display = 'none';
+}
 
+function hideMessage() {
+  messageContainer.style.display = 'none';
+  gameContainer.style.display = 'block';
+}
 
 restartBtn.addEventListener('click', () => {
-  messageContainer.style.display = 'none';
-  initGame(container);
-  isStarted = false;
+  hideMessage();
+  const selectedLevel = parseInt(levelSelect.value);
+  initGame(gameContainer, selectedLevel);
 });
 
-// Inicijuojam žaidimą (canvas ir pradiniai objektai)
-initGame(container);
+startGameBtn.addEventListener('click', () => {
+  hideMessage();
+  const selectedLevel = parseInt(levelSelect.value);
+  initGame(gameContainer, selectedLevel);
+});
 
-export function showMessage(text) {
-  gameMessage.textContent = text;
-  messageContainer.style.display = 'block';
-}
+window.showMessage = showMessage; // kad game.js galėtų iškviesti showMessage
+
+// Pradinis žaidimo startas
+initGame(gameContainer, parseInt(levelSelect.value));

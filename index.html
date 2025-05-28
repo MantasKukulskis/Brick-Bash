@@ -3,17 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <title>Brick Bash</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <h1>Brick Bash</h1>
+
+  <div id="controls">
+    <label for="levelSelect">Choose Level:</label>
+    <select id="levelSelect">
+      <option value="1">Easy</option>
+      <option value="2">Medium</option>
+      <option value="3">Hard</option>
+      <option value="4">Insane</option>
+    </select>
+    <button id="startGameBtn">Start Game</button>
+  </div>
+
   <div id="game-container"></div>
 
-<div id="message-container" style="display:none;">
+  <div id="message-container" style="display:none;">
     <p id="game-message"></p>
     <button id="restart-btn">Restart Game</button>
-</div>
+  </div>
 
   <script type="module" src="./src/main.js"></script>
 </body>

@@ -1,12 +1,12 @@
 export class Paddle {
-  constructor(canvas) {
-    this.width = 100;
+  constructor(canvas, width = 100) {
+    this.canvas = canvas;
+    this.width = width;
     this.height = 20;
-    this.x = canvas.width / 2 - this.width / 2;
-    this.y = canvas.height - this.height - 10;
+    this.x = (canvas.width - this.width) / 2;
+    this.y = canvas.height - this.height - 30;
     this.speed = 7;
     this.dx = 0;
-    this.canvas = canvas;
   }
 
   moveLeft() {

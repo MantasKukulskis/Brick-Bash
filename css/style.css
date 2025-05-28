@@ -7,6 +7,7 @@ body {
   padding: 0;
   user-select: none;
 }
+
 #game-container {
   position: relative;
   margin: 20px auto;
@@ -14,13 +15,35 @@ body {
   height: 600px;
   background: #111;
 }
+
 canvas {
   display: block;
   background: #000;
   margin: 0 auto;
 }
-#start-btn {
-  margin: 20px;
+
+#controls {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#controls label {
+  color: white;
+}
+
+#levelSelect {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+}
+
+#startGameBtn {
   padding: 10px 20px;
   font-size: 18px;
   cursor: pointer;
@@ -28,6 +51,11 @@ canvas {
   border: none;
   color: white;
   border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+#startGameBtn:hover {
+  background-color: #08c;
 }
 
 #message-container {
@@ -48,4 +76,9 @@ canvas {
   border: none;
   color: white;
   border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+#restart-btn:hover {
+  background-color: #d33;
 }
