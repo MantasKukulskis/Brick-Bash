@@ -35,7 +35,7 @@ Want to try it on your machine? Open terminal and follow these steps:
 
     Clone the repo
 
-git clone https://github.com/YourUsername/brick-bash.git
+git clone https://github.com/MantasKukulskis/Brick-Bash.git
 
     Install NPM packages
 
@@ -55,7 +55,7 @@ There are no tests for this project.
 
 👨‍💻 Authors
 
-Your Name: https://github.com/YourUsername
+Your Name: https://github.com/MantasKukulskis
 
 ⚠️ License
 
